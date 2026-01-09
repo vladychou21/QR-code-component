@@ -4,8 +4,20 @@
     box-sizing: border-box;
 }
 
+/*Variables */
+:root {
+    --BODYBGCOLOR: hsl(212, 45%, 89%);
+    --ARTBGCOLOR: hsl(0, 0%, 100%);
+    --TITLETXTCOLOR: hsl(218, 44%, 22%);
+    --SUBTITLETXTCOLOR: hsl(216, 15%, 48%);
+}
+
+
+/*Main Code*/
+
 body {
     font-family: Arial, Helvetica, sans-serif; /*Change*/
+    font-size: 15px;
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr;
@@ -15,6 +27,8 @@ body {
     "mn mn mn"
     "ft ft ft"
     ;
+
+    background-color: var(--BODYBGCOLOR);
 }
 
 main {
@@ -22,8 +36,6 @@ main {
     display: grid;
     justify-content: center;
     align-content: center;
-
-    background-color: grey;
 }
 
 footer {
@@ -34,11 +46,16 @@ article {
     display: flex;
     flex-flow: column nowrap;
 
-    background-color: white;
+    background-color: var(--ARTBGCOLOR);
     padding: 16px;
+    border-radius: 20px;
 }
 
-#section-content {
+#imagebox img {
+    border-radius: 10px;
+}
+
+#textbox {
     width: 288px;
     height: 131px;
     display: flex;
@@ -46,4 +63,18 @@ article {
     justify-content: space-between;
     margin: 24px 0px;
     text-align: center;
+}
+
+#textbox-title {
+    color: var(--TITLETXTCOLOR);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 120%;
+}
+
+#textbox-subtitle {
+    color: var(--SUBTITLETXTCOLOR);
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0.2px;
 }
